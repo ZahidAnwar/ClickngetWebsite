@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts> 
+     <constant value="false" name="struts.enable.DynamicMethodInvocation"/> 
+     <constant value="true" name="struts.devMode"/> 
+     <package name="default" extends="struts-default" namespace="/"> 
+         <default-action-ref name="index"/>
+         <global-results> 
+             <result name="error">/error.jsp</result> 
+         </global-results> 
+         <!--
+         <global-exception-mappings> 
+             <exception-mapping result="error" exception="java.lang.Exception"/> 
+         </global-exception-mappings> 
+          -->
+          
+        <action name="RestaurantLogin">
+            <result>WEB-INF/src/res_login.jsp</result>
+        </action>
+        <action name="Restaurant">
+            <result>WEB-INF/src/res.jsp</result>
+        </action> 
+        
+        <action name="Driver">
+            <result>WEB-INF/src/driver.jsp</result>
+        </action>
+        
+        <action name="AdditionalTime">
+            <result>WEB-INF/src/additional_time.jsp</result>
+        </action>
+       
+        <action name="AdditionalTimeResponse">
+            <result>WEB-INF/src/additional_time_response.jsp</result>
+        </action>
+        
+        <action name="OrderSubmit" class="com.clicknget.order.OrderActionSupport" method="execute">
+            <result name="success">/WEB-INF/src/survey/surveyPage.jsp</result>
+            <result name="error">/WEB-INF/src/error/error.jsp</result>
+        </action> 
+        
+        <!--
+
+       
+         <action name="OrderResponse" class="com.nutratech.survey.SurveyActionClass" method="execute">
+            <result name="success">/WEB-INF/src/survey/surveyPage.jsp</result>
+            <result name="error">/WEB-INF/src/error/error.jsp</result>
+        </action>
+
+         <action name="DeliveryStatus" class="com.nutratech.survey.SurveyActionClass" method="execute">
+            <result name="success">/WEB-INF/src/survey/surveyPage.jsp</result>
+            <result name="error">/WEB-INF/src/error/error.jsp</result>
+        </action>
+        -->
+
+    </package> 
+</struts>
